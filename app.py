@@ -3,16 +3,15 @@ import os
 
 app = Flask(__name__)
 
-# Route to serve the favicon.ico file
-@app.route('/favicon.ico')
+# Route to serve favicon.png
+@app.route('/favicon.png')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/x-icon')
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.png')
 
+# Route to serve author.png
 @app.route('/author.png')
 def author_image():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'author.png')
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'author.png')
 
 @app.route('/')
 def home():
@@ -20,7 +19,7 @@ def home():
     <html>
         <head>
             <title>Simple Web Page</title>
-            <link rel="icon" href="/favicon.ico" type="image/x-icon">
+            <link rel="icon" href="/favicon.png" type="image/png">
         </head>
         <body>
             <h1>Welcome to my simple Python web page!</h1>
